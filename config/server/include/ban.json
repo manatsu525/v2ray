@@ -3,5 +3,5 @@
                 "domain": [
                     "domain:360.com"
                 ],
-                "outboundTag": "blocked"
+                "outboundTag": "direct"
  }
