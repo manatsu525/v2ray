@@ -351,26 +351,7 @@ tls_config() {
 	echo "----------------------------------------------------------------"
 	echo
 
-	while :; do
 
-		read -p "$(echo -e "(是否已经正确解析: [${magenta}Y$none]):") " record
-		if [[ -z "$record" ]]; then
-			error
-		else
-			if [[ "$record" == [Yy] ]]; then
-				domain_check
-				echo
-				echo
-				echo -e "$yellow 域名解析 = ${cyan}我确定已经有解析了$none"
-				echo "----------------------------------------------------------------"
-				echo
-				break
-			else
-				error
-			fi
-		fi
-
-	done
 
 	if [[ $v2ray_transport -ne 5 ]]; then
 		auto_tls_config
@@ -457,8 +438,8 @@ path_config() {
 	echo
 	while :; do
 		echo -e "请输入想要 ${magenta}用来分流的路径$none , 例如 /233blog , 那么只需要输入 233blog 即可"
-		read -p "$(echo -e "(默认: [${cyan}233blog$none]):")" path
-		[[ -z $path ]] && path="233blog"
+		read -p "$(echo -e "(默认: [${cyan}sumire$none]):")" path
+		[[ -z $path ]] && path="sumire"
 
 		case $path in
 		*[/$]*)
@@ -488,8 +469,8 @@ proxy_site_config() {
 		echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://liyafly.com 的内容"
 		echo -e "其实就是一个反代...明白就好..."
 		echo -e "如果不能伪装成功...可以使用 v2ray config 修改伪装的网址"
-		read -p "$(echo -e "(默认: [${cyan}https://liyafly.com$none]):")" proxy_site
-		[[ -z $proxy_site ]] && proxy_site="https://liyafly.com"
+		read -p "$(echo -e "(默认: [${cyan}https://morinagamilk.co.jp$none]):")" proxy_site
+		[[ -z $proxy_site ]] && proxy_site="https://www.morinagamilk.co.jp"
 
 		case $proxy_site in
 		*[#$]*)
@@ -948,14 +929,14 @@ backup_config() {
 		sed -i "30s/=10000/=$v2ray_dynamic_port_start_input/; 33s/=20000/=$v2ray_dynamic_port_end_input/" $backup
 	fi
 	if [[ $shadowsocks ]]; then
-		sed -i "42s/=/=true/; 45s/=6666/=$ssport/; 48s/=233blog.com/=$sspass/; 51s/=chacha20-ietf/=$ssciphers/" $backup
+		sed -i "42s/=/=true/; 45s/=6666/=$ssport/; 48s/=sumire.com/=$sspass/; 51s/=chacha20-ietf/=$ssciphers/" $backup
 	fi
-	[[ $v2ray_transport == [45] ]] && sed -i "36s/=233blog.com/=$domain/" $backup
+	[[ $v2ray_transport == [45] ]] && sed -i "36s/=sumire.com/=$domain/" $backup
 	[[ $caddy ]] && sed -i "39s/=/=true/" $backup
 	[[ $ban_ad ]] && sed -i "54s/=/=true/" $backup
 	if [[ $is_path ]]; then
 		sed -i "57s/=/=true/; 60s/=233blog/=$path/" $backup
-		sed -i "63s#=https://liyafly.com#=$proxy_site#" $backup
+		sed -i "63s#=https://morinaga.co.jp#=$proxy_site#" $backup
 	fi
 }
 
