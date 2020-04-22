@@ -5,6 +5,7 @@ case $v2ray_transport in
 	if [[ $is_path ]]; then
 		cat >/etc/caddy/Caddyfile <<-EOF
 $domain {
+    tls lineair069@gmail.com
     gzip
 	timeouts none
     proxy / $proxy_site {
