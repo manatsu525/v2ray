@@ -56,6 +56,7 @@ cp -f $v2ray_client_config_file $v2ray_client_config
 
 # change port, uuid, alterId
 sed -i "9s/2333/$v2ray_port/; 14s/$old_id/$v2ray_id/; 16s/233/$alterId/" $v2ray_server_config
+sed -i "5s/2333/$v2ray_port/; 7s/$old_id/$v2ray_id/" $v2ray_server_config
 
 # change dynamic port
 if [[ $v2ray_transport -ge 18 ]]; then
