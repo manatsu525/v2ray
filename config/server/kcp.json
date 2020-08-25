@@ -2,7 +2,7 @@
     "inbound": {
         "protocol": "vmess",
         "listen": "0.0.0.0",
-        "port": 16,
+        "port": 2333,
         "settings": {
             "clients": [{
                     "id": "e55c8d17-2cf3-b21a-bcf1-eeacb011ed79",
