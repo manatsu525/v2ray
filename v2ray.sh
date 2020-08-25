@@ -136,11 +136,11 @@ create_vmess_URL_config() {
 			"add": "${domain}",
 			"port": "443",
 			"id": "${v2ray_id}",
-			"aid": "${alterId}",
+			"aid": "16",
 			"net": "${net}",
 			"type": "none",
 			"host": "${domain}",
-			"path": "$_path",
+			"path": "/sumire",
 			"tls": "tls"
 		}
 		EOF
@@ -153,7 +153,7 @@ create_vmess_URL_config() {
 			"add": "${ip}",
 			"port": "${v2ray_port}",
 			"id": "${v2ray_id}",
-			"aid": "${alterId}",
+			"aid": "16",
 			"net": "${net}",
 			"type": "${header}",
 			"host": "${host}",
