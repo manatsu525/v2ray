@@ -140,7 +140,7 @@ create_vmess_URL_config() {
 			"net": "${net}",
 			"type": "none",
 			"host": "${domain}",
-			"path": "/sumire",
+			"path": "$_path",
 			"tls": "tls"
 		}
 		EOF
