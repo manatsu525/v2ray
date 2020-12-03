@@ -19,8 +19,8 @@
                 "uplinkCapacity": 100,
                 "downlinkCapacity": 100,
                 "congestion": false,
-                "readBufferSize": 1,
-                "writeBufferSize": 1,
+                "readBufferSize": 2,
+                "writeBufferSize": 2,
                 "header": {
                     "type": "none"
                 },
