@@ -340,7 +340,6 @@ tls_config() {
 		echo "----------------------------------------------------------------"
 		break
 	done
-	get_ip
 	echo
 	echo
 	echo -e "$yellow 请将 $magenta$domain$none $yellow解析到: $cyan$ip$none"
